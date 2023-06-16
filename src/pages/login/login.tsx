@@ -22,19 +22,21 @@ function Login() {
     <>
       { loading === false && (
         <form onSubmit={ login }>
-          <input
-            type="text"
-            data-testid="login-name-input"
-            placeholder="Name"
-            onChange={ (event) => setInput(event.target.value) }
-          />
-          <button
-            type="submit"
-            data-testid="login-submit-button"
-            disabled={ validInput }
-          >
-            Entrar
-          </button>
+          <div className="Login">
+            <input
+              type="text"
+              data-testid="login-name-input"
+              placeholder="Name"
+              onChange={ (event) => setInput(event.target.value) }
+            />
+            <button
+              type="submit"
+              data-testid="login-submit-button"
+              disabled={ validInput }
+            >
+              Entrar
+            </button>
+          </div>
         </form>
       )}
       {loading === true && <Loading />}
