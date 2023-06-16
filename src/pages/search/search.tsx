@@ -12,7 +12,7 @@ function Search() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState<boolean>(false);
   const [search, setSearch] = useState('');
-  const [album, setAlbum] = useState<AlbumType[]>([]);
+  const [isAlbum, setIsAlbum] = useState<AlbumType[]>([]);
 
   const validInput = input.length < 2;
 
@@ -23,7 +23,7 @@ function Search() {
     const searchData = await searchAlbumsAPI(input);
     setLoading(false);
     setSearch(input);
-    setAlbum(searchData);
+    setIsAlbum(searchData);
 
     navigate('/search');
   };
@@ -52,8 +52,8 @@ function Search() {
       )}
       {loading === true && <Loading />}
       {search && <p>{`Resultado de álbuns de: ${search}`}</p>}
-      {album.length > 0
-        ? album
+      {isAlbum.length > 0
+        ? isAlbum
           .map((album) => <Card key={ album.collectionId } { ...album } />)
         : 'Nenhum álbum foi encontrado'}
     </>
