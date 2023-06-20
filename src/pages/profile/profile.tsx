@@ -1,0 +1,5 @@
+function Profile() {
+  return <h1>teste</h1>;
+}
+
+export default Profile;
