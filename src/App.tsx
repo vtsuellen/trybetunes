@@ -4,8 +4,6 @@ import NotFound from './pages/notFound/notFound';
 import Login from './pages/login/login';
 import Search from './pages/search/search';
 import Album from './components/album/album';
-import Favorites from './pages/favorites/favorites';
-import Profile from './pages/profile/profile';
 import Layout from './components/layout/layout';
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
       {/* <Route path="/favorites" element={ <Favorites /> } />
       <Route path="/profile" element={ <Profile /> } /> */}
       {/* <Route path="/profile/edit" element={ ProfileEdit }/> */}
-      {/* <Route path="/*" element={ <NotFound /> } /> */}
+      <Route path="/*" element={ <NotFound /> } />
     </Routes>
   );
 }
